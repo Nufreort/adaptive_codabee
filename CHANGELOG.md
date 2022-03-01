@@ -1,3 +1,4 @@
-## 0.0.1
+## [0.0.1] - 2022-03-01
 
-* TODO: Describe initial release.
+* Create initial package.
+* Purpose : help learning how to create a package.
