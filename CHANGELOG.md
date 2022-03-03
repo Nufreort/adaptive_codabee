@@ -2,3 +2,6 @@
 
 * Create initial package.
 * Purpose : help learning how to create a package.
+* Scaffold
+* Text
+* Alert
