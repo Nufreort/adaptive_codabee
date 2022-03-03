@@ -36,7 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
     return Adaptive.scaffold(
         string: "Test Adaptive",
         widget: Center(
-          child: Adaptive.text(string: "${Adaptive.isWeb()}", color: Colors.pink),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Adaptive.text(string: "${Adaptive.isWeb()}", color: Colors.pink),
+              ElevatedButton(onPressed: ()=> Adaptive.alert(context: context), child: Adaptive.text(string: "Press me"))
+            ],
+          )
         ),
     );
   }

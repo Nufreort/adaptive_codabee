@@ -19,6 +19,14 @@ class Adaptive {
     TextStyle style = textStyle(color: color, size: size);
     return (kIsWeb) ? webText(string: string, style: style, align: align) : androidText(string: string, style: style, align: align);
   }
+
+  static Future alert({required BuildContext context}) {
+    return showDialog(context: context,
+        builder: (context) {
+          return (kIsWeb) ? webErrorAlert(context: context) : androidErrorAlert(context: context);
+        });
+  }
+
   //Android
   static Scaffold androidScaffold({required String string, required Widget body}){
     return Scaffold(
@@ -34,6 +42,22 @@ class Adaptive {
       style: style,
       textAlign: align ?? TextAlign.right,
     );
+  }
+
+  static AlertDialog androidErrorAlert({required BuildContext context}) {
+    return  AlertDialog(
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              text(string: "Une erreur est apparue"),
+            ],
+          ),
+      actions: [
+        ElevatedButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: text(string: "OK"))
+      ],
+        );
   }
 
   //Web design
@@ -53,6 +77,21 @@ class Adaptive {
       textAlign: align ?? TextAlign.left,
     );
   }
+
+  static AlertDialog webErrorAlert({required BuildContext context}) {
+    return AlertDialog(
+            content: Column(
+
+              children: [
+                text(string: "Une erreur est apparue"),
+                ElevatedButton(
+                    onPressed: () => Navigator.of(context).pop(),
+                    child: text(string: "not OK"))
+              ],
+            ),
+          );
+  }
+
 
   //Both Material
   static TextStyle textStyle({Color? color, double? size, TextAlign? align}) {
