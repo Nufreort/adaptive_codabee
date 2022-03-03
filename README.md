@@ -11,8 +11,10 @@ and the Flutter guide for
 [developing packages and plugins](https://flutter.dev/developing-packages). 
 -->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+#Adaptive Codabee
+
+Apprendre à créer un package qui s'adapte selon le device.
+It comes from a tutorial.
 
 ## Features
 
@@ -20,8 +22,11 @@ TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Pour utiliser ce package, ajouter au `pubpspec.yalm`:
+```yalm
+ dependencies:
+    adaptiev_codabee:^0.0.1
+```
 
 ## Usage
 
@@ -29,7 +34,7 @@ TODO: Include short and useful examples for package users. Add longer examples
 to `/example` folder. 
 
 ```dart
-const like = 'sample';
+import: "package:adaptive_codabee.adaotuvecodabee.dart";
 ```
 
 ## Additional information

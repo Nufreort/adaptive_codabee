@@ -20,6 +20,10 @@ class Adaptive {
     return (kIsWeb) ? webText(string: string, style: style, align: align) : androidText(string: string, style: style, align: align);
   }
 
+  static button({required Widget child, required VoidCallback onPressed}){
+    return (isWeb()) ? webButton(child: child, onPressed: onPressed) : androidButton(child: child, onPressed: onPressed);
+  }
+
   static Future alert({required BuildContext context}) {
     return showDialog(context: context,
         builder: (context) {
@@ -34,6 +38,10 @@ class Adaptive {
       ),
       body: body,
     );
+  }
+
+  static ElevatedButton androidButton({required Widget child, required VoidCallback onPressed}){
+    return ElevatedButton(onPressed: onPressed, child: child);
   }
 
   static Text androidText({required String string, required TextStyle style,  TextAlign? align}){
@@ -76,6 +84,10 @@ class Adaptive {
       style: style,
       textAlign: align ?? TextAlign.left,
     );
+  }
+
+  static ElevatedButton webButton({required Widget child, required VoidCallback onPressed}){
+    return ElevatedButton(onPressed: onPressed, child: child);
   }
 
   static AlertDialog webErrorAlert({required BuildContext context}) {
